@@ -1,7 +1,8 @@
 eco = require 'eco'
 
 module.exports = class EcoCompiler
-  compilerType: 'template'
+  brunchPlugin: yes
+  type: 'template'
   extension: 'eco'
 
   constructor: (@config) ->
