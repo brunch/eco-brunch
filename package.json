@@ -1,6 +1,6 @@
 {
   "name": "eco-brunch",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Adds eco support to brunch.",
   "author": "Paul Miller (http://paulmillr.com/)",
   "homepage": "https://github.com/brunch/eco-brunch",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "coffee-script": "1.2.0",
-    "eco": "1.1.0-rc-3"
+    "eco": "1.1.1-rc-3"
   },
   "devDependencies": {
     "mocha": "0.12.1",
