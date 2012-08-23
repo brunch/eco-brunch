@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/brunch/eco-brunch.png)](http://travis-ci.org/brunch/eco-brunch)
 ## eco-brunch
 Adds [eco](https://github.com/sstephenson/eco) support to
 [brunch](http://brunch.io).
