@@ -10,7 +10,7 @@ module.exports = class EcoCompiler
 
   compile: (data, path, callback) ->
     try
-      result = "module.exports = #{eco.compile data}"
+      result = eco.compile data
     catch err
       error = err
     callback error, result
