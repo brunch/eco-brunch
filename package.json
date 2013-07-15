@@ -1,6 +1,6 @@
 {
   "name": "eco-brunch",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Adds eco support to brunch.",
   "author": "Paul Miller (http://paulmillr.com/)",
   "homepage": "https://github.com/brunch/eco-brunch",
@@ -14,7 +14,8 @@
     "test": "node_modules/.bin/mocha --require test/common.js"
   },
   "dependencies": {
-    "eco": "1.1.0-rc-3"
+    "eco": "1.1.0-rc-3",
+    "umd-wrapper": "~0.1.0"
   },
   "devDependencies": {
     "mocha": "1.11.0",

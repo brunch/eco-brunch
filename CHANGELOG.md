@@ -1,3 +1,6 @@
+# eco-brunch 1.7.1 (15 July 2013)
+* Added proper UMD support.
+
 # eco-brunch 1.7.0 (15 July 2013)
 * Added support for non-common.js wrappers.
 
