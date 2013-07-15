@@ -1,3 +1,6 @@
+# eco-brunch 1.7.0 (15 July 2013)
+* Added support for non-common.js wrappers.
+
 # eco-brunch 1.5.1 (19 March 2013)
 * Added node 0.10 support, removed coffee-script dependency.
 
