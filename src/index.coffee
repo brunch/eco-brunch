@@ -7,11 +7,24 @@ module.exports = class EcoCompiler
   extension: 'eco'
 
   constructor: (@config) ->
-    null
+    ecoConfig = @config.plugins?.eco
+    if ecoConfig
+      ecoConfig.overrides?(eco)
+      @namespace = ecoConfig.namespace
+
 
   compile: (data, path, callback) ->
     try
-      result = umd eco.compile(data).toString()
+      source = eco.compile(data).toString()
+      result = 
+        if @namespace
+          ns = @namespace
+          key = path.replace(/^.*templates\//, '').replace(/\..+?$/, '')
+          "if (typeof #{ns} === 'undefined'){ #{ns} = {} }; #{ns}['#{key}'] = #{source}"
+        else
+          umd source
+
     catch err
       error = err
     callback error, result
+
