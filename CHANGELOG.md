@@ -1,3 +1,6 @@
+# eco-brunch 1.7.2 (26 February 2014)
+* Rewritten in JS.
+
 # eco-brunch 1.7.1 (15 July 2013)
 * Added proper UMD support.
 

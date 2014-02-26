@@ -1,14 +1,14 @@
 {
   "name": "eco-brunch",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Adds eco support to brunch.",
   "author": "Paul Miller (http://paulmillr.com/)",
   "homepage": "https://github.com/brunch/eco-brunch",
+  "keywords": ["brunchplugin", "eco", "templates"],
   "repository": {
     "type": "git",
     "url": "git@github.com:brunch/eco-brunch.git"
   },
-  "main": "./lib/index",
   "scripts": {
     "test": "node_modules/.bin/mocha"
   },
