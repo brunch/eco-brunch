@@ -13,7 +13,7 @@
     "test": "node_modules/.bin/mocha"
   },
   "dependencies": {
-    "reactive-eco": "0.1.0",
+    "reactive-eco": "~0.1.0",
     "umd-wrapper": "~0.1.0"
   },
   "devDependencies": {
