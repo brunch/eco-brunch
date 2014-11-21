@@ -1,3 +1,7 @@
+# eco-brunch 1.7.5 (21 November 2014)
+* Revert to 1.7.2 state.
+* 1.7.3 & 1.7.4 were botched attempts at replacing eco with reactive-eco, and should be disregarded.
+
 # eco-brunch 1.7.2 (26 February 2014)
 * Rewritten in JS.
 
