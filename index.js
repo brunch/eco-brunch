@@ -1,4 +1,4 @@
-var eco = require('reactive-eco');
+var eco = require('eco');
 var umd = require('umd-wrapper');
 
 function EcoCompiler(config) {
