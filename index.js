@@ -1,33 +1,48 @@
-var eco = require('eco');
-var umd = require('umd-wrapper');
+'use strict';
 
-function EcoCompiler(config) {
-  var plugins = config.plugins;
-  if (plugins == null) plugins = {};
-  var options = plugins.eco;
+const eco = require('eco');
+const umd = require('umd-wrapper');
 
-  if (options) {
-    if (typeof options.overrides === "function") {
-      options.overrides(eco);
+class EcoCompiler {
+  constructor(config) {
+    const options = config && config.plugins && config.plugins.eco || {};
+
+    if (options) {
+      if (typeof options.overrides === 'function') {
+        options.overrides(eco);
+      }
+      this.namespace = options.namespace;
     }
-    this.namespace = options.namespace;
+  }
+
+
+  compile(params) {
+    const data = params.data;
+    const path = params.path;
+
+    let error, result;
+
+    return new Promise((resolve, reject) => {
+      try {
+        const source = eco.compile(data).toString();
+        const ns = this.namespace;
+        const key = path.replace(/^.*templates\//, '').replace(/\..+?$/, '');
+
+        result = ns ?
+          `if (typeof ${ns} === 'undefined'){ ${ns} = {} }; ${ns}['"${key}'] = ${source}` :
+          umd(source);
+      } catch (err) {
+        error = err;
+      } finally {
+        if (error) return reject(error);
+        resolve(result);
+      }
+    });
   }
 }
 
 EcoCompiler.prototype.brunchPlugin = true;
 EcoCompiler.prototype.type = 'template';
 EcoCompiler.prototype.extension = 'eco';
-
-EcoCompiler.prototype.compile = function(data, path, callback) {
-  var error, key, ns, result, source;
-  try {
-    source = eco.compile(data).toString();
-    result = this.namespace ? (ns = this.namespace, key = path.replace(/^.*templates\//, '').replace(/\..+?$/, ''), "if (typeof " + ns + " === 'undefined'){ " + ns + " = {} }; " + ns + "['" + key + "'] = " + source) : umd(source);
-  } catch (err) {
-    error = err;
-  } finally {
-    callback(error, result);
-  }
-};
 
 module.exports = EcoCompiler;
