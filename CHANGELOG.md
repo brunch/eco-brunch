@@ -1,3 +1,6 @@
+# eco-brunch 2.0.0 (Jan 29, 2016)
+* Updated source code & API. The plugin would now only work with Brunch 2.2 and higher.
+
 # eco-brunch 1.7.5 (21 November 2014)
 * Revert to 1.7.2 state.
 * 1.7.3 & 1.7.4 were botched attempts at replacing eco with reactive-eco, and should be disregarded.
