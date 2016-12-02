@@ -3,7 +3,7 @@ Adds [eco](https://github.com/sstephenson/eco) support to
 [brunch](http://brunch.io).
 
 ## Usage
-Install the plugin via npm with `npm install --save eco-brunch`.
+Install the plugin via npm with `npm install --save-dev eco-brunch`.
 
 Or, do manual install:
 
